@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #1b2422;
+  background: #f4f5f0;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.app-shell { min-height: 100vh; background: #f4f5f0; }
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 42px max(24px, calc((100vw - 1100px) / 2));
+  color: #f5f6ee;
+  background: #182523;
+}
+.app-header h1 { margin: 4px 0 0; font-size: clamp(2.6rem, 7vw, 5rem); line-height: .9; letter-spacing: -0.04em; }
+.app-header p:not(.eyebrow) { margin: 16px 0 0; color: #b7c5b9; font-size: 1.05rem; }
+.eyebrow { margin: 0; color: #e1a168; font-family: 'Space Mono', monospace; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.header-mark { display: grid; place-items: center; width: 62px; height: 62px; border: 1px solid #708678; border-radius: 50%; color: #e1a168; font-family: 'Space Mono', monospace; font-size: .9rem; }
+.main-content { width: min(1100px, calc(100% - 48px)); margin: 0 auto; padding: 58px 0 80px; }
+.create-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; padding-bottom: 68px; border-bottom: 1px solid #d7ddd2; }
+.section-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+h2 { margin: 8px 0 0; color: #1b2422; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.04em; }
+.section-number, .operation-count { color: #8e9d91; font-family: 'Space Mono', monospace; font-size: .85rem; }
+.operation-form { display: grid; gap: 18px; }
+.operation-form label { display: grid; gap: 8px; color: #53625b; font-size: .82rem; font-weight: 700; }
+input, textarea { width: 100%; border: 1px solid #ccd4c9; border-radius: 3px; padding: 13px 14px; color: #1b2422; background: #fff; outline: none; resize: vertical; }
+input:focus, textarea:focus { border-color: #657f6f; box-shadow: 0 0 0 3px #dce6dc; }
+.primary-button, .secondary-button, .delete-button { border: 0; border-radius: 3px; padding: 11px 16px; font-size: .82rem; font-weight: 700; transition: transform .15s ease, opacity .15s ease; }
+button:hover:not(:disabled) { transform: translateY(-1px); }
+button:disabled { cursor: wait; opacity: .65; }
+.primary-button { justify-self: start; color: #fff; background: #2f5548; }
+.operations-section { padding-top: 58px; }
+.operations-section > .section-heading { margin-bottom: 24px; }
+.operations-list { display: grid; gap: 12px; }
+.operation-card { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 22px 24px; border: 1px solid #d7ddd2; border-left: 4px solid #b6c6b4; background: #fff; }
+.operation-title-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+h3 { margin: 0; font-size: 1.12rem; }
+.operation-description { margin: 9px 0 12px; color: #617068; }
+time { color: #89978d; font-family: 'Space Mono', monospace; font-size: .68rem; }
+.status { border-radius: 2px; padding: 4px 7px; font-family: 'Space Mono', monospace; font-size: .62rem; text-transform: uppercase; }
+.status-pending { color: #8a5b27; background: #f8e4cc; }
+.status-completed { color: #2d654e; background: #dcebdc; }
+.operation-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.secondary-button { color: #2f5548; background: #e1ebe1; }
+.delete-button { color: #9b4c42; background: transparent; }
+.message { margin: 24px 0; color: #69776e; }
+.error-message { padding: 12px 14px; border-left: 3px solid #bd5c4c; color: #8d3d34; background: #fae9e4; }
+.empty-message { padding: 36px 0; border-top: 1px solid #d7ddd2; }
+
+@media (max-width: 700px) {
+  .app-header { padding: 32px 24px; }
+  .header-mark { width: 48px; height: 48px; }
+  .main-content { width: min(100% - 32px, 520px); padding-top: 40px; }
+  .create-section { display: block; padding-bottom: 48px; }
+  .create-section .section-heading { margin-bottom: 28px; }
+  .operations-section { padding-top: 48px; }
+  .operation-card { display: block; padding: 18px; }
+  .operation-actions { margin-top: 18px; }
+}
